@@ -98,5 +98,8 @@
 (require 'simpc-mode)
 (add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
 
+(with-eval-after-load 'simpc-mode
+  (define-key simpc-mode-map (kbd "C-c f") #'clang-format-buffer))
+
 (add-to-list 'custom-theme-load-path "~/.emacs.d/lisp")
 (load-theme 'linus t)
